@@ -32,8 +32,7 @@ async function handleCommand(input) {
         printCurrentDirectory();
 
     } catch (err) {
-        // Todo properly handle error
-        console.error(`error ${err.message}`);
+       showError(err.message);
     }
 }
 
