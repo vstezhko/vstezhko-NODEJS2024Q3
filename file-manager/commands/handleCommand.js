@@ -1,6 +1,6 @@
-// commands/handleCommand.js
 const changeDirectory = require('../operations/changeDirectory');
 const listDirectory = require('../operations/listDirectory');
+const upperDirectory = require("../operations/upperDirectory");
 
 const printCurrentDirectory = require('../utils/printCurrentDirectory');
 const showError = require("../utils/showError");
@@ -22,7 +22,11 @@ async function handleCommand(input) {
                 break;
 
             case 'ls':
-                await listDirectory(command);
+                await listDirectory();
+                break;
+
+            case 'up':
+                await upperDirectory();
                 break;
 
 
