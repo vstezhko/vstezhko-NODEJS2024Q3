@@ -1,6 +1,8 @@
 const changeDirectory = require('../operations/changeDirectory');
 const listDirectory = require('../operations/listDirectory');
 const upperDirectory = require("../operations/upperDirectory");
+const readAndPrint = require("../operations/readAndPrint");
+const createEmptyFile = require("../operations/createEmptyFile");
 
 const printCurrentDirectory = require('../utils/printCurrentDirectory');
 const showError = require("../utils/showError");
@@ -27,6 +29,22 @@ async function handleCommand(input) {
 
             case 'up':
                 await upperDirectory();
+                break;
+
+            case 'cat':
+                if (args.length !== 1) {
+                    showError('target path isn\'t provided')
+                } else {
+                    await readAndPrint(args[0]);
+                }
+                break;
+
+            case 'add':
+                if (args.length !== 1) {
+                    showError('file name isn\'t provided')
+                } else {
+                    await createEmptyFile(args[0]);
+                }
                 break;
 
 
