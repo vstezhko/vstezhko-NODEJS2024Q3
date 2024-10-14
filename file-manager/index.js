@@ -20,10 +20,8 @@ const homeDirectory = os.homedir();
 function setStartingDirectory(directory) {
     try {
         process.chdir(directory);
-        console.log(`Starting in the user's home directory: ${directory}`);
     } catch (err) {
-        console.error(`Failed to change directory to ${directory}: ${err.message}`);
-        console.error('Exiting the application.');
+        showError(`Failed to change directory to ${directory}: ${err.message}`);
         process.exit(1);
     }
 }
