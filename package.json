@@ -1,0 +1,38 @@
+{
+  "name": "vstezhko-nodejs2024q3",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "build": "webpack --config webpack.config.js",
+    "start:prod": "npm run build && node dist/bundle.js",
+    "start:multi": "ts-node src/cluster.ts",
+    "test": "mocha --no-warnings=ExperimentalWarning --require ts-node/register test/**/*.test.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/chai": "^5.0.0",
+    "@types/chai-http": "^3.0.5",
+    "@types/mocha": "^10.0.9",
+    "@types/node": "^22.7.7",
+    "@types/uuid": "^10.0.0",
+    "chai": "^4.5.0",
+    "chai-http": "^5.1.1",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.4.5",
+    "eslint": "^9.13.0",
+    "mocha": "^10.7.3",
+    "nodemon": "^3.1.7",
+    "prettier": "^3.3.3",
+    "ts-loader": "^9.5.1",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.6.3",
+    "uuid": "^10.0.0",
+    "webpack": "^5.95.0",
+    "webpack-cli": "^5.1.4"
+  }
+}
